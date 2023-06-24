@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Narnia</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <!-- css dosyasını dahil ediyor -->
+</head>
+
+<body>
+  <!-- header section start  -->
+
+  <header class="header">
+    <a href="#" class="logo"><!-- Bu özellik resmi tıklanabilir yapar.-->
+      <img src="images/logo.png" alt="logo" />
+    </a>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about"> About</a>
+      <a href="#menu">Menu</a>
+      <a href="#products">Products</a>
+      <a href="#review">Review</a>
+      <a href="#contact">Contact</a>
+      <a href="#blogs">Blogs</a>
+    </nav>
+
+    <div class="buttons">
+      <button id="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+      <button id="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+      <button id="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- arama kutusunun oluşturulması-->
+    <div class="search-form">
+      <!--id kullandım çünkü javascript yazcaz-->
+      <input type="text" class="search-input" id="search-box " placeholder="search-holder" />
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="cart-items-container">
+      <div class="cart-item">
+        <i class="fas fa-times"></i>
+        <img src="images/et.png" alt="menu" />
+        <div class="content">
+          <h3>cart item 02</h3>
+          <div class="price">$149.99</div>
+        </div>
+      </div>
+      <div class="cart-item">
+        <i class="fas fa-times"></i>
+        <img src="images/fish.png" alt="menu" />
+        <div class="content">
+          <h3>cart item 03</h3>
+          <div class="price">$119.99</div>
+        </div>
+      </div>
+      <div class="cart-item">
+        <i class="fas fa-times"></i>
+        <img src="images/chicken.png" alt="menu" />
+        <div class="content">
+          <h3>cart item 04</h3>
+          <div class="price">$149.99</div>
+        </div>
+      </div>
+      <div class="cart-item">
+        <i class="fas fa-times"></i>
+        <img src="images/meat.png" alt="menu" />
+        <div class="content">
+          <h3>cart item 01</h3>
+          <div class="price">$139.99</div>
+        </div>
+      </div>
+      <a href="#" class="btn">Check Out Now</a>
+    </div>
+
+
+   
+  </header>
+  <!-- header section end  -->
+  <!-- home section start  -->
+  <section class="home" id="home">
+    <div class="content">
+      <h3>
+        You can't experience being in Narnia without a magical wardobe. But we
+        can help!
+      </h3>
+      <p>
+        You can borrow clothes from a wardrobe filled with clothes suitable
+        for the concept and experience this atmosphere with meals preferred by
+        our King and Queens. There are rumors that the Magnificent Peter's
+        sword, the Gentle Susan's magical arrows, and the Brave Lucy's dagger
+        are also in the wardrobe.
+      </p>
+      <a href="#" class="btn">Click and Book</a>
+    </div>
+  </section>
+  <!-- home section end  -->
+  <!-- menu section start  -->
+  <section class="menu" id="menu">
+    <h1 class="heading">Our <span> menu</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="box-head">
+          <img src="images/et.png" alt="menu" />
+          <span class="menu-category">Beef</span>
+          <h3>Beef Pirzola</h3>
+          <div class="price">$149.99 <span>$139.99</span></div>
+        </div>
+        <div class="box-bottom">
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-head">
+          <img src="images/chicken.png" alt="menu" />
+          <span class="menu-category">chicken</span>
+          <h3>Chicken</h3>
+          <div class="price">$109.99 <span>$99.99</span></div>
+        </div>
+        <div class="box-bottom">
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-head">
+          <img src="images/meat.png" alt="menu" />
+          <span class="menu-category">veal</span>
+          <h3>Meat Balls</h3>
+          <div class="price">$139.99 <span>$129.99</span></div>
+        </div>
+        <div class="box-bottom">
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-head">
+          <img src="images/fish.png" alt="menu" />
+          <span class="menu-category">Seafood</span>
+          <h3>Fish</h3>
+          <div class="price">$119.99 <span>$109.99</span></div>
+        </div>
+        <div class="box-bottom">
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- menu section end  -->
+  <!-- products section  start  -->
+  <section class="products" id="products">
+    <h1 class="heading">Our <span> Products</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="box-head">
+          <span class="title">Salad</span>
+          <a href="#" class="name">Caesar Salad</a>
+
+          <img src="images/salad.jpg" alt="menu" />
+        </div>
+        <div class="box-bottom">
+          <div class="info">
+            <b class="price">$20.00</b>
+            <span class="amount">100gr/350 Cal</span>
+          </div>
+          <div class="product-btn">
+            <a href="#">
+              <i class="fas fa-plus"></i>
+              <!-- icon tasarımı-->
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-head">
+          <span class="title">Vegan Salad</span>
+          <a href="#" class="name">Special Salad</a>
+
+          <img src="images/vegan.jpg" alt="menu" />
+        </div>
+        <div class="box-bottom">
+          <div class="info">
+            <b class="price">$20.00</b>
+            <span class="amount">100gr/50 Cal</span>
+          </div>
+          <div class="product-btn">
+            <a href="#">
+              <i class="fas fa-plus"></i>
+              <!-- icon tasarımı-->
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-head">
+          <span class="title">Fruit Salad</span>
+          <a href="#" class="name">Acai Bowl</a>
+
+          <img src="images/acai1.jpg" alt="menu" />
+        </div>
+        <div class="box-bottom">
+          <div class="info">
+            <b class="price">$30.00</b>
+            <span class="amount">100gr/300 Cal</span>
+          </div>
+          <div class="product-btn">
+            <a href="#">
+              <i class="fas fa-plus"></i>
+              <!-- icon tasarımı-->
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- products section  end  -->
+  <!-- about section start -->
+  <section class="about" id="about">
+    <h1 class="heading">About<span>Us</span></h1>
+    <div class="row">
+      <div class="image">
+        <!--sol kısımda burası olacak-->
+        <img src="images/about.jpg" alt="about" />
+      </div>
+      <div class="content">
+        <!--sağ kısımda bu olacak-->
+        <h3>Why Did We choose Narnia?</h3>
+        <p>
+          Because Narnia is our founder's favorite movie and it was her
+          biggest dream to go to narnia when she was little.Of course, when
+          she was older, she accepted that this was impossible and opened this
+          cafe to at least experience being there.
+        </p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+  <!-- about section end  -->
+  <!-- rewiew section start  -->
+  <section class="review" id="review">
+    <h1 class="heading">Customer's<span>Review</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <img src="images/quote.png" alt="quote" />
+
+        <p>
+          you must to visit this restaurant.My boyfriend celebrated my
+          birthday here.It was Amazing.All of the costumes are similar with
+          originals!Thank you darling.For the ASLAN!!!
+        </p>
+        <img src="images/beck.jpg" alt="avatar" class="user" />
+        <h3>Guinevere Beck</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/quote.png" alt="quote" />
+
+        <p>
+          My girlfriend is the biggest narnia lover.when she entered into to
+          restaurant she fell in love with atmosphere! I guess this was nice
+          suprize for her birthday. Happy new year dear!
+        </p>
+        <img src="images/joe.jpeg" alt="avatar" class="user" />
+        <h3>Joe Goldberg</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/quote.png" alt="quote" />
+
+        <p>
+          my friend recommed this restaurant and ı really liked the meals. All
+          waiters was too kind. And the music was fantastic.I really felt like
+          ı'm the queen of Narnia.
+        </p>
+        <img src="images/delilah.jpeg" alt="avatar" class="user" />
+        <h3>Delilah Alves</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- rewiew section end  -->
+
+  <!-- contant section start-->
+  <section class="contact" id="contact">
+    <h1 class="heading">Contact<span>Us</span></h1>
+    <div class="row">
+      <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19866.24945639295!2d-0.13248056737679803!3d51.50805719664138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b4c032e385%3A0x17c354076330416c!2sRoyal%20Courts%20of%20Justice!5e0!3m2!1str!2str!4v1684921041439!5m2!1str!2str"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <form>
+        <h3>GET IN TOUCH</h3>
+        <div class="inputBox">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="name" />
+        </div>
+        <div class="inputBox">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="name" />
+        </div>
+        <div class="inputBox">
+          <i class="fas fa-phone"></i>
+          <input type="number" placeholder="name" />
+        </div>
+        <input type="submit" class="btn" value="contact now" />
+      </form>
+    </div>
+  </section>
+
+  <!-- contant section end-->
+
+  <!-- blog section start-->
+  <section class="blog" id="blogs">
+    <h1 class="heading">Our<span>Blogs</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img src="images/nere.jpg" alt="blog" />
+        </div>
+        <div class="content">
+          <a href="#" class="title">What is Narnia?</a>
+          <span>by Caroline/22st June,2022</span>
+          <p>
+            Narnia is a fantasy world created by C. S. Lewis as the primary
+            location for his series of seven fantasy novels for children, The
+            Chronicles of Narnia.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image"><img src="images/kim.jpg" alt="blog" /></div>
+        <div class="content">
+          <a href="#" class="title">Who are Telmarins?</a>
+          <span>by Dennis/7st April,2022</span>
+          <p>
+            The Telmarines are a people in the fictional world of Narnia
+            created by the British author C. S. Lewis for his series The
+            Chronicles of Narnia.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image"><img src="images/white.jpeg" alt="blog" /></div>
+        <div class="content">
+          <a href="#" class="title">Who is White Witch?</a>
+          <span>by Lydia/22st October,2022</span>
+          <p>
+            Jadis was born on an unknown date long before the creation of
+            Narnia. In The Lion, the Witch and the Wardrobe she is identified
+            by a character as a descendant of giants and Adam's first wife
+            (Lilith).
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- blog section end-->
+
+  <!-- footer section start-->
+  <section class="footer">
+    <div class="search">
+      <input type="text" class="search-input" placeholder="Search" />
+      <button class="btn bnt-primary">search</button>
+    </div>
+    <div class="share">
+      <a href="#" class="fab fa-twitter"> </a>
+      <a href="#" class="fab fa-github"> </a>
+      <a href="#" class="fab fa-linkedin"> </a>
+    </div>
+    <div class="links">
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Menu</a>
+      <a href="#">Products</a>
+      <a href="#">Review</a>
+      <a href="#">Contact</a>
+      <a href="#">Blogs</a>
+    </div>
+    <div class="credit">
+      created by <span>Beyza Terzioğlu</span> | all rights reserved
+    </div>
+  </section>
+
+  <!-- footer section end-->
+  <script src="js/script.js"></script> <!--java.script dosyasını import ediyoruz-->
+</body>
+
+</html>

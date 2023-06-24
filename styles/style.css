@@ -1,0 +1,697 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+:root {
+  --main-color: #652523ff;
+  --black-color: #121212;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  /* 1 rem=10 px yapmış olduk responsive tasarım için*/
+}
+
+* {
+  font-family: "Macondo", cursive;
+  margin: 0;
+  /*köşelerdeki boşlukları ayarlıyor */
+  padding: 0;
+
+  /*köşelerdeki boşlukları ayarlıyor */
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  /*kelimenin ilk harfini büyük sonrasını küçük yazar */
+  transition: 0.2s ease;
+  /*geçiş hızı*/
+}
+
+/*! base html codes */
+html {
+  font-size: 62.5%;
+  /* 1 rem normalde =16 px,biz bunu 1 rem=10 px olmasını sağladı RESPONSİVE TASARIM*/
+  overflow-x: hidden;
+  /* scroll bar x kapatıldı*/
+  scroll-padding-top: 9rem;
+  /* scroll barın kayaağı mesafe*/
+  scroll-behavior: smooth;
+  /*kaydırma efekti*/
+}
+
+html::-webkit-scrollbar {
+  /*scrollbarın alt beyaz katmanı*/
+  width: 0.8rem; /*normalde çıkan scrollbar chrome'nin kendi oluşturduğudur. Bu da her tarayıcıda çalışmayabilir. responsive yapıda problem olur*/
+  background-color: #f2f2f2;
+}
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  /*scrollbarın kayan kısmı*/
+  border-radius: 3rem;
+  background-color: var(--black-color);
+}
+
+body {
+  background-color: var(--main-color);
+  /*body kısmına yukarıda tanımladığımız isimlerle renk veriyoruz*/
+}
+
+section {
+  padding: 3.5rem 7%;
+  /* yandan 7% lik boşluk bıraktı soldan başlık kısmı*/
+}
+a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 2rem 2.75rem;
+  border-radius: 10rem;
+  /*yuvarlak köşeler*/
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: var(--black-color);
+  cursor: pointer;
+  /*tıklanabilir*/
+}
+
+.btn:hover {
+  opacity: 0.4;
+  /*butonların üstüne geldiğimizde buton şeffaflaşmasını sağlar*/
+}
+
+.heading {
+  color: #f2f2f2;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1rem solid #f2f2f2;
+}
+
+.heading span {
+  color: var(--black-color);
+  text-transform: uppercase;
+}
+.search-input {
+  font-size: 1.6rem;
+  color: var(--black-color);
+  padding: 1rem;
+  text-transform: none;
+  border-radius: 3rem;
+}
+/*-- header start */
+.header .search-form{ /*search kutusunu aşağıya aldı i,emle*/
+  position: absolute;
+  top:115%;
+  right:7%;
+  background-color: #f2f2f2;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 3rem;
+  box-shadow: 0px 0px 25px 2px rgb(0 0 0 / 75%);
+  transform: scaleY(0);
+  
+}
+.header .search-form.active{ /*yukarından aşağıya iniyor*/
+transform: scaleY(1);
+}
+.header .search-form i{ /*simge özelliklerini veriyoruz*/
+  cursor:pointer ;
+  font-size:2.2rem;
+  margin-right:1.5rem;
+  color:var(--black-color);
+}
+.header .search-form input{
+  width:100% ;/*açılan arama kutusunu arama kısmı tam kaplıyor bu sayede*/
+}
+.header .logo img {
+  height: 10rem;
+  /* logonun boyutunu ayarlar */
+}
+
+.header {
+  background-color: #f2f2f2;
+  display: flex;
+  /*yan yana atıyor header alanındaki her şeyi*/
+  align-items: center;
+  /*merkeze hizalar*/
+  justify-content: space-between;
+  /*sol sağ boşluğu hizalandı*/
+  padding: 0 7%;
+  /* sağdan soldan ufak boşluklar bıraktı*/
+  margin: 2rem 7%;
+  /* üst boşluk*/
+  border-radius: 30rem;
+  /* kenarları dairesel hale getirdi*/
+  box-shadow: 0px 0px 17px -2px rbga(0, 0, 0, 0.75);
+  /*başlık alanında gölge oluşturduk*/
+  position: sticky;
+  /*scroll bar biizmle hareket eder*/
+  top: 0;
+  z-index: 1000;
+  /*başlığın her daim önde olnmasını sağlıyor*/
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--black-color);
+  border-bottom: 0.1rem solid transparent;
+  /*alt çizgiler*/
+}
+
+.header .navbar .active,
+/* , alttakindeki kodları üsttekine de yaz demek oluyor*/
+
+
+.header .navbar a:hover {
+  border-color: var(--main-color);
+  /*butonların üstüne geldiğimizde çıkan altcizginin efektleri*/
+  padding-bottom: 0.5rem;
+}
+
+.header .buttons button {
+  cursor: pointer;
+  /* farenin imlecini değiştiriyor*/
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  /* butonlar arası uzaklık*/
+  background-color: transparent;
+}
+.header .cart-items-container{
+position: absolute;
+top: 95%;
+height:calc(100vh - 9rem);
+width:35rem;
+background-color: #f2f2f2;
+box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+right:-100%;
+
+}
+.header .cart-items-container.active{ /*yukarından aşağıya iniyor*/
+  transform: scaleY(0);
+  }
+.header .cart-items-container 
+{
+right:3rem;
+}
+.header .cart-items-container .btn{
+width: 100%; /*kaydıkça bizle geliyor*/
+text-align: center;
+border-radius:unset ;
+}
+.header .cart-items-container .cart-item{
+  position: relative;
+  display:flex;
+  align-items: center;
+  gap:1.5rem;
+  padding:1.5rem;
+}
+.header .cart-items-container .cart-item:hover{
+  box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+}
+.header .cart-items-container .cart-item .fa-times{
+position: absolute;
+top:1rem;
+right:1.5rem;
+font-size: 2rem;
+cursor: pointer;/*mouse biçimini belirler*/
+}
+.header .cart-items-container .cart-item img{
+  height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+  font-size: 2rem;
+  color:var(--black-color);
+  padding-bottom: 0.5rem;
+}
+.header .cart-items-container .cart-item .content h3{
+font-size:1.5rem;
+color:var(--black-color);
+
+}
+.header #menu-btn {
+  /*responsive desing için açıldı*/
+  display: none;
+}
+
+/*-- header end */
+
+/*-- home start */
+.home {
+  min-height: 100vh;
+  /*100 vh ekranın sdece göründüğü kısmını kaplar*/
+  background: url(../images/home33.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -14.5rem;
+  /* başlık alanında boş alan kalıyordu resmin orayı da doldurmasını sağlamak için*/
+
+  display: flex;
+  /*yazıyı alta alıyor alttakiyle*/
+  align-items: center;
+}
+
+.home .content {
+  max-width: 60rem;
+}
+
+.home .content h3 {
+  font-size: 5rem;
+  color: black;
+}
+
+.home .content p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: black;
+}
+
+/*-- home end */
+
+/*-- menu start*/
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  /*kullandığımız tüm resimleri yan yana getirir RESPONSİVE İÇİN ÇOK ÖNEMLİ*/
+  gap: 1.5rem;
+}
+
+.menu .box-container .box {
+  /*yiyeceklerin bulunduğu beyaz kutuların şekillendirlimesi*/
+  position: relative;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  background-color: #fff;
+  height: 50rem;
+
+  min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.menu .box-container .box img {
+  /*yan yana olan resimleri tek bir boyuta indirgeyip yakınlaştırmak için*/
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.menu .box-container .box .menu-category {
+  /*yan yana olan resimleri tek bir boyuta indirgeyip yakınlaştırmak için*/
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  /* yazıyı büyütür.*/
+}
+
+.menu .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.menu .box-container .box .price {
+  font-size: 2rem;
+  padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+  font-size: 1.5rem;
+
+  text-decoration: line-through;
+  /* üstü çizili fiyatlar,indirimlerde */
+}
+
+/*-- menu end */
+
+/*-- product start */
+.products .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  /*kullandığımız tüm resimleri yan yana getirir RESPONSİVE İÇİN ÇOK ÖNEMLİ*/
+  gap: 1.5rem;
+}
+.products .box-container .box {
+  text-align: center;
+
+  background-color: #fff;
+  position: relative;
+  border-radius: 3rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.products .box-container .box .box-head {
+  /*alt alta hizalamak için*/
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 10;
+  text-transform: uppercase;
+}
+.products .box-container .box .box-head .title {
+  /*hizalamak için*/
+  font-size: 1.4rem;
+}
+.products .box-container .box .box-head .name {
+  /*hizalamak için*/
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: start;
+  overflow-wrap: anywhere; /*textin taşmamasını sağlıyor*/
+}
+
+.products .box-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.products .box-container .box-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+.products .box-container .box-bottom .info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+.products .box-container .box-bottom .price {
+  font-size: 3rem;
+}
+
+.products .box-container .box-bottom .info .amount {
+  font-size: 1.4rem;
+}
+.products .box-container .box-bottom .product-btn {
+  /*+ işaretinin çevresindeki yuvarlak*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 0.2rem solid var(--main-color);
+}
+.products .box-container .box-bottom .product-btn a i {
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+/*-- product end */
+/*About start*/
+
+.about .row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem; /*sağdan ve soldan aralarını açtırdı sadece flexbox özel*/
+}
+.about .row .image {
+  flex: 1 1 45rem;
+}
+.about .row img {
+  width: 100%;
+}
+.about .row .content {
+  flex: 1 1 45rem;
+}
+.about .row .content h3 {
+  font-size: 3rem;
+  color: #f2f2f2;
+}
+.about .row .content p {
+  font-size: 1.6rem;
+  color: #f2f2f2;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+/*About end*/
+/*Review Start*/
+.review .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  /*kullandığımız tüm resimleri yan yana getirir RESPONSİVE İÇİN ÇOK ÖNEMLİ*/
+  gap: 1.5rem;
+}
+
+.review .box-container .box {
+  border: var(--border);
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #f2f2f2;
+  border-radius: 3rem;
+}
+.review .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 2rem 0;
+}
+.review .box-container .box .user {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover; /*maskelenme olayını engelledi*/
+}
+.review .box-container .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--main-color);
+}
+.review .box-container .box .stars i {
+  font-size: 1.5rem;
+  color: gold;
+}
+/*Review end*/
+
+/*contact section start*/
+.contact .row {
+  display: flex; /*yanyana koyuyor*/
+  background-color: var(--black-color);
+  flex-wrap: wrap; /*küçüldüğünde alta atar RESPONSİVE TASARIMA KATKI*/
+  gap: 1rem; /*bileşenlerin aralrındaki boşluğu ayarlar*/
+}
+.contact .row .map {
+  flex: 1 1 45rem; /*kaplayacağı yer*/
+  width: 100%;
+  object-fit: cover;
+}
+.contact .row form {
+  flex: 1 1 45rem; /*kaplayacağı yer*/
+  padding: 5rem 2rem;
+  text-align: center; /*form bileşenlerini ortalar*/
+}
+.contact .row form h3 {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: #f2f2f2;
+}
+.contact .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0; /*yukarıdan aşağıya 2rem sağdan soldan 0 */
+  border: var(--border);
+}
+.contact .row form .inputBox i {
+  color: #f2f2f2;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.contact .row form .inputBox input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: #f2f2f2;
+  text-transform: none;
+  background: none;
+}
+.contact .row form .btn {
+  color: var(--main-color);
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+/*contact section end*/
+/*blog section start*/
+.blog .box-container {
+  /*grid sayesinde otomatik bir responsive yapı oluşuyor*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.blog .box-container .box {
+  background-color: #f2f2f2;
+  border-radius: 3rem;
+}
+.blog .box-container .box .image {
+  height: 25rem;
+  overflow: hidden;
+  width: 50%;
+  border-top-right-radius: 3rem; /*bazı yerler tam yuvarlanmamıstı onun için */
+
+  border-top-left-radius: 3rem; /*bazı yerler tam yuvarlanmamıstı onun için */
+}
+.blog .box-container .box .image {
+  height: 50%;
+  object-fit: cover;
+  width: 100%;
+}
+.blog .box-container .box:hover .image {
+  /*üstüne ok getirilince*/
+  transform: scale(1.2);
+}
+.blog .box-container .box .content {
+  /*üstüne ok getirilince*/
+  padding: 2rem;
+}
+
+.blog .box-container .box .content .title {
+  /*üstüne ok getirilince*/
+  line-height: 1.5rem;
+  font-size: 2.5rem;
+}
+.blog .box-container .box .content span {
+  /*üstüne ok getirilince*/
+  display: block;
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+.blog .box-container .box .content p {
+  /*üstüne ok getirilince*/
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #ccc;
+  padding: 1rem 0;
+}
+
+/*blog section end*/
+
+/*footer start*/
+.footer {
+  background-color: var(--black-color);
+  text-align: center;
+}
+.footer .search {
+  display: flex;
+  justify-content: center;
+}
+.footer .search .search-input {
+  width: 30rem;
+}
+.footer .search .btn {
+  background-color: var(--main-color);
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+}
+.footer .share {
+  padding: 2rem 0;
+}
+.footer .share a {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  color: #f2f2f2;
+  font-size: 2rem;
+  border: var(--border);
+  border-radius: 50%;
+  margin: 0.3rem;
+}
+.footer .share a:hover {
+  background-color: var(--main-color);
+}
+.footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer .links a {
+  background-color: var(--main-color);
+  padding: 0.7 rem 2rem;
+  color: #f2f2f2;
+  font-size: 2rem;
+  border: var(--border);
+}
+.footer .links a:hover {
+  background-color: var(--black-color);
+  opacity: 0.7;
+}
+.footer .links a.active {
+  background-color: var(--black-color);
+}
+.footer .credit {
+  font-size: 2rem;
+  color: #f2f2f2;
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+.footer .credit span {
+  color: var(--main-color);
+}
+/*footer end*/
+/*responsive start*/
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  .header .logo .img {
+    height: 7rem;
+  }
+  section {
+    padding: 2rem;
+  }
+  .products .box-container .box .box-head .name {
+    font-size: 3.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: inline-block; /*ekran mobil boyutuna geçince 3 çizgi kısmı çıkıyor*/
+  }
+  .header .navbar {
+    position: absolute;
+    top: 95%;
+    background-color: #f2f2f2;
+    height: calc(100vh - 9rem);
+    width: 30rem;
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+    right: -100%; /*üç noktaya basıldığında geliyor ekrana*/
+  }
+  .header .navbar .active {
+    right: 3rem;
+  }
+  .header .navbar a {
+    color: var(--black-color);
+    display: block; /*alt alta sıralanmasını sağlıyor.*/
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+html{
+  font-size: 50%;
+}
+
+}
+/*responsive end*/
